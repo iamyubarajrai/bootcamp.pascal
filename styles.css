@@ -351,6 +351,10 @@ body, figure { margin: 0; }
     transform: translateY(-3px) scale(1.03);
 }
 
+.required, .error { color: red; }
+.required { font-size: 26px; }
+.error { font-size: 16px; }
+
 /* 
 CSS Media
 - print
