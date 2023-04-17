@@ -33,7 +33,6 @@ body, figure { margin: 0; }
 
 .header {
     background-color: var(--primary-color);
-    overflow: hidden;
 }
 
 .clearfix::after {
@@ -110,6 +109,20 @@ body, figure { margin: 0; }
     z-index: 1;
 }
 
+.header .icon-text span.icon-text__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .icon-text {
+    transform: skew(-20deg);
+}
+
+.header .icon-text__inner {
+    transform: skew(20deg);
+}
+
 .header .icon-text svg {
     width: 32px;
     height: 32px;
@@ -123,28 +136,15 @@ body, figure { margin: 0; }
     text-transform: uppercase;
 }
 
-.header .icon-text::before,
 .header .icon-text::after {
     content: "";
     position: absolute;
     display: inline-block;
-    background-color: white;
-}
-
-.header .icon-text::after {    
+    background-color: white; 
     top: 0;
     left: 99%;
     width: 100vw;
     height: 100%;
-}
-
-.header .icon-text::before {
-    top: -20%;
-    right: 90%;
-    transform: rotate(25deg);
-    width: 100px;
-    height: calc(100% * 2);
-    z-index: -1;
 }
 
 .billboard {
@@ -242,4 +242,177 @@ body, figure { margin: 0; }
     right: 20px;
     transform: translate(0, -50%) rotate(45deg);
     border-right: 5px solid white;
+}
+
+.hamburger {
+    position: relative;
+    display: none;
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 46px;
+    height: 46px;
+}
+
+.hamburger span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    background-color: white;
+    width: 70%;
+    height: 4px;
+    font-size: 0;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+    content: "";
+    position: relative;
+    display: block;
+    background-color: white;
+    width: 100%;
+    height: 4px;
+}
+
+.hamburger span::before { top: -10px; }
+.hamburger span::after { bottom: -6px; }
+
+/* Form styling */
+.form-box {
+    background-color: #F2F2F2;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.form-header,
+.form-box form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+    width: 100%;
+    padding: 2px 8px;
+}
+
+.form-box input,
+.form-box select {
+    height: 38px;
+}
+
+.form-box textarea {
+    min-height: 120px;
+}
+
+.form-box fieldset { margin-bottom: 20px; }
+.field-group { 
+    margin-top: 6px; 
+    margin-bottom: 6px;
+}
+.form-box input[type*="radio"],
+.form-box input[type*="checkbox"] {
+    width: 22px;
+}
+.form-box ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+.form-box li { 
+    display: inline-block;
+    padding: 4px;
+}
+.form-box li label,
+.form-box li input { vertical-align: middle; }
+.form-box h4 { margin: 0; }
+.field-group > label { font-weight: 700; }
+
+.field-group [type*="submit"],
+.field-group [type*="reset"] {
+    border: 0;
+    border-radius: 4px;
+    width: auto;
+    height: auto;
+    padding: 12px 36px;
+    font-size: 21px;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.field-group [type*="submit"] { background-color: green; }
+.field-group [type*="reset"] { background-color: orangered; }
+
+.field-group [type*="submit"]:hover,
+.field-group [type*="reset"]:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* 
+CSS Media
+- print
+- device (all, screen)
+- syntax:
+@media print {
+    css_selector { property: value; }
+    .header { display: none; } 
+}
+@media screen and (max-width: 1024px) {
+    css_selector { property: value; }
+}
+@media screen and (min-width: 900px) {
+    css_selector { property: value; }
+}
+*/
+@media screen and (max-width: 1024px) {
+    .main-nav a {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 900px) {
+    .main-nav a {
+        padding: 6px;
+    }
+    .header .icon-text::before {
+        right: 70%;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .hamburger {
+        display: inline-block;
+    }
+
+    .main-nav {
+        position: relative;
+    }
+
+    .main-nav > ul {
+        position: absolute;
+        top: 100%;
+        display: none;
+        background-color: var(--primary-color);
+        min-width: 180px;
+        z-index: 10;
+    }
+
+    .main-nav li {
+        display: block;
+    }
+}
+
+@media all and (min-width: 901px) {
+    .main-nav > ul {
+        display: block !important;
+    }
+}
+
+@media print {
+    .header {
+        display: none;
+    }
 }

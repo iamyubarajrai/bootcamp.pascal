@@ -17,5 +17,10 @@ $(document).ready(function() {
         slidesToScroll: 1,
         speed: 1000
     });
+
+    let menuIcon = $(".hamburger");
+    menuIcon.on("click", function() {
+        $(".main-nav > ul").slideToggle(500);
+    });
 });
 
