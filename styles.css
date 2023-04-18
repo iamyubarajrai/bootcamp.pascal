@@ -355,6 +355,55 @@ body, figure { margin: 0; }
 .required { font-size: 26px; }
 .error { font-size: 16px; }
 
+.proad-block img {
+    display: block;
+    width: 100%;
+}
+
+.entry-block { background-color: #F2F2F2; }
+.entry-block__title { margin: 0; }
+.entry-block .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.entry-block__content {
+    width: 60%;
+    padding: 40px;
+}
+.entry-block__image {
+    position: relative;
+    width: 40%;
+}
+.entry-block__image img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top left;
+}
+
+.entry-block__image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f2f2+0,f2f2f2+100&1+0,0+100 */
+    background: -moz-linear-gradient(left,  rgba(242,242,242,1) 0%, rgba(242,242,242,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(242,242,242,1) 0%,rgba(242,242,242,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(242,242,242,1) 0%,rgba(242,242,242,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#00f2f2f2',GradientType=1 ); /* IE6-9 */
+
+    width: 60%;
+    height: 100%;
+}
+
+.entry-block__quote svg {
+    color: var(--primary-color);
+}
+
 /* 
 CSS Media
 - print
