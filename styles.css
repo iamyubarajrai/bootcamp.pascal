@@ -206,6 +206,7 @@ body, figure { margin: 0; }
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.3s;
+    color: white;
 }
 
 .button:hover {
@@ -402,6 +403,11 @@ body, figure { margin: 0; }
 
 .entry-block__quote svg {
     color: var(--primary-color);
+}
+
+.grid-box .container {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* 
